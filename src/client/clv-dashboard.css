@@ -1,0 +1,359 @@
+/* CLV Maximizer Analytics Dashboard - Demo Styles */
+
+/* Dashboard Layout */
+.clv-dashboard {
+    background: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4CAF50;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.dashboard-section h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid #3498db;
+}
+
+/* Demo KPIs */
+.demo-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.kpi-card h3 {
+    color: #495057;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.kpi-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 1rem 0;
+}
+
+.kpi-trend {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.kpi-trend.positive {
+    background: rgba(40, 167, 69, 0.1);
+    color: #155724;
+}
+
+.kpi-confidence {
+    font-size: 1rem;
+    color: #17a2b8;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: rgba(23, 162, 184, 0.1);
+    border-radius: 20px;
+}
+
+/* Demo Performance */
+.demo-performance {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.performance-widget {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.performance-widget h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.funnel-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.funnel-stage {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.risk-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.risk-item {
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+}
+
+.risk-item.critical {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+}
+
+.risk-item.high {
+    background: linear-gradient(135deg, #fd7e14, #ffc107);
+}
+
+.risk-item.medium {
+    background: linear-gradient(135deg, #ffc107, #28a745);
+    color: #2c3e50;
+}
+
+.risk-value {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Demo Intelligence */
+.demo-intelligence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.intelligence-widget {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.intelligence-widget h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #28a745;
+}
+
+.benchmark-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benchmark-item {
+    background: rgba(40, 167, 69, 0.1);
+    color: #155724;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border-left: 4px solid #28a745;
+}
+
+.tier-distribution {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tier-item {
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+}
+
+.tier-item.platinum {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.tier-item.gold {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.tier-item.silver {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.tier-item.bronze {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+/* Status Message */
+.status-message {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    margin: 3rem auto;
+    max-width: 1000px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+}
+
+.status-message h3 {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-message p {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.status-message ul {
+    color: #495057;
+    line-height: 1.8;
+    padding-left: 1.5rem;
+}
+
+.status-message li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-section {
+        padding: 0 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 2rem;
+    }
+    
+    .dashboard-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .demo-kpis {
+        grid-template-columns: 1fr;
+    }
+    
+    .demo-performance,
+    .demo-intelligence {
+        grid-template-columns: 1fr;
+    }
+    
+    .kpi-value {
+        font-size: 2.5rem;
+    }
+    
+    .status-message {
+        padding: 2rem;
+        margin: 2rem 1rem;
+    }
+}

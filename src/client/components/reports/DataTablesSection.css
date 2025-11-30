@@ -1,0 +1,334 @@
+/* Data Tables Section Styles */
+
+.data-tables-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+}
+
+.data-tables-section.loading,
+.data-tables-section.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+/* Table Navigation */
+.table-navigation {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-tabs {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.table-tab {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.table-tab:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.table-tab.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    border-color: transparent;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.export-btn,
+.refresh-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.export-btn:hover,
+.refresh-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Interactive Features Panel */
+.interactive-features {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-group h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 150px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.tier-filter {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.875rem;
+    min-width: 120px;
+}
+
+.analysis-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.analysis-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #3498db;
+    color: #3498db;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.analysis-btn:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.refresh-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.refresh-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #28a745;
+}
+
+.status-indicator.active {
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    font-size: 0.875rem;
+    color: #495057;
+}
+
+.refresh-interval {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.refresh-interval label {
+    font-size: 0.875rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.refresh-interval select {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.875rem;
+}
+
+/* Data Table Widget */
+.data-table-widget {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.data-table-widget .widget-header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+/* Table Summary */
+.table-summary {
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #ced4da;
+    color: #495057;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .interactive-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .table-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .table-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .interactive-features {
+        padding: 1rem;
+    }
+    
+    .table-navigation {
+        padding: 1rem;
+    }
+    
+    .table-tabs {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .table-tab {
+        text-align: center;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    .analysis-buttons {
+        flex-direction: column;
+    }
+    
+    .table-summary {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .summary-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .quick-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+}

@@ -1,0 +1,131 @@
+/* Trend Chart Styles */
+
+.trend-chart {
+    position: relative;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.trend-chart.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.chart-title {
+    padding: 1rem 1rem 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #495057;
+    text-align: center;
+}
+
+.chart-svg {
+    display: block;
+    width: 100%;
+    background: white;
+}
+
+.grid-line {
+    stroke: #e9ecef;
+    stroke-width: 1;
+    opacity: 0.5;
+}
+
+.trend-line {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.prediction-line {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.8;
+}
+
+.data-point {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.data-point:hover {
+    r: 5;
+    fill: #FF9800;
+}
+
+.confidence-text {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.chart-axes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid #e9ecef;
+}
+
+.y-axis-labels {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    color: #6c757d;
+    padding-right: 5px;
+}
+
+.x-axis-labels {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* Sparkline Styles */
+.trend-chart.sparkline {
+    background: transparent;
+}
+
+.trend-chart.sparkline .chart-svg {
+    background: transparent;
+}
+
+.empty-message {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chart-title {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .y-axis-labels,
+    .x-axis-labels {
+        font-size: 0.625rem;
+    }
+}

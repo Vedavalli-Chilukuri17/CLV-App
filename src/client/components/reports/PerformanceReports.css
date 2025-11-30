@@ -1,0 +1,568 @@
+/* Performance Reports Styles */
+
+.performance-reports {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.performance-reports.loading,
+.performance-reports.empty {
+    grid-template-columns: 1fr;
+}
+
+/* Pipeline Funnel Widget */
+.pipeline-funnel-widget {
+    grid-column: span 2;
+    min-height: 400px;
+}
+
+.funnel-visualization {
+    padding: 1.5rem;
+}
+
+.time-windows {
+    margin-bottom: 1.5rem;
+}
+
+.window-selector {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.window-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: white;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.window-btn.active,
+.window-btn:hover {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.funnel-stages {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.funnel-stage {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.funnel-stage.lead {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.funnel-stage.qualified {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.funnel-stage.proposal {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.funnel-stage.negotiation {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: white;
+}
+
+.funnel-stage.closed {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    color: white;
+}
+
+.stage-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stage-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.stage-value {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.conversion-ratios {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #6c757d;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.ratio {
+    text-align: center;
+    font-weight: 500;
+}
+
+/* High-Risk Analysis Widget */
+.high-risk-analysis-widget {
+    grid-column: span 2;
+}
+
+.risk-heatmap {
+    padding: 1.5rem;
+}
+
+.tier-risk-matrix {
+    margin-bottom: 1.5rem;
+}
+
+.matrix-header {
+    display: grid;
+    grid-template-columns: 120px repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.risk-level {
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+}
+
+.risk-level.critical {
+    background: #dc3545;
+}
+
+.risk-level.high {
+    background: #fd7e14;
+}
+
+.risk-level.medium {
+    background: #ffc107;
+    color: #495057;
+}
+
+.risk-level.low {
+    background: #28a745;
+}
+
+.tier-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tier-row {
+    display: grid;
+    grid-template-columns: 120px repeat(4, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.tier-label {
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.tier-row.platinum .tier-label {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.tier-row.gold .tier-label {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.tier-row.silver .tier-label {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.tier-row.bronze .tier-label {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: white;
+}
+
+.risk-cell {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.risk-cell:hover {
+    transform: scale(1.05);
+}
+
+.risk-cell.critical {
+    background: #dc3545;
+}
+
+.risk-cell.high {
+    background: #fd7e14;
+}
+
+.risk-cell.medium {
+    background: #ffc107;
+    color: #495057;
+}
+
+.risk-cell.low {
+    background: #28a745;
+}
+
+.risk-summary {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.summary-stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Engagement Tracking Widget */
+.engagement-tracking-widget {
+    grid-column: span 2;
+}
+
+.channel-performance {
+    padding: 1.5rem;
+}
+
+.channel-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.channel-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.channel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.channel-card.app {
+    border-color: #667eea;
+}
+
+.channel-card.email {
+    border-color: #f093fb;
+}
+
+.channel-card.call {
+    border-color: #4facfe;
+}
+
+.channel-card.advisor {
+    border-color: #43e97b;
+}
+
+.channel-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.channel-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.engagement-score {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.conversion-rate {
+    font-size: 1rem;
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.channel-trend {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.channel-trend.positive {
+    color: #28a745;
+}
+
+.channel-trend.negative {
+    color: #dc3545;
+}
+
+.attribution-analysis {
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.attribution-analysis h4 {
+    margin: 0 0 1rem 0;
+    color: #495057;
+    font-size: 1rem;
+}
+
+.attribution-chart {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.attribution-bar {
+    display: flex;
+    height: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.attribution-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.attribution-segment.app {
+    background: #667eea;
+}
+
+.attribution-segment.email {
+    background: #f093fb;
+}
+
+.attribution-segment.call {
+    background: #4facfe;
+}
+
+.attribution-segment.advisor {
+    background: #43e97b;
+}
+
+/* Cross-sell Opportunity Widget */
+.crosssell-opportunity-widget {
+    grid-column: span 2;
+}
+
+.opportunity-matrix {
+    padding: 1.5rem;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    height: 300px;
+}
+
+.opportunity-quadrant {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.opportunity-quadrant:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.opportunity-quadrant.high-engagement-high-clv {
+    border-color: #28a745;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+}
+
+.opportunity-quadrant.high-engagement-low-clv {
+    border-color: #17a2b8;
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.1), rgba(23, 162, 184, 0.05));
+}
+
+.opportunity-quadrant.low-engagement-high-clv {
+    border-color: #ffc107;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 193, 7, 0.05));
+}
+
+.opportunity-quadrant.low-engagement-low-clv {
+    border-color: #6c757d;
+    background: linear-gradient(135deg, rgba(108, 117, 125, 0.1), rgba(108, 117, 125, 0.05));
+}
+
+.opportunity-quadrant h4 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.quadrant-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-item {
+    font-size: 0.875rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.conversion-probability {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+}
+
+.opportunity-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-left: 4px solid #3498db;
+    border-radius: 6px;
+}
+
+.insight-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.insight-text {
+    font-size: 0.875rem;
+    color: #495057;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .performance-reports {
+        grid-template-columns: 1fr;
+    }
+    
+    .pipeline-funnel-widget,
+    .high-risk-analysis-widget,
+    .engagement-tracking-widget,
+    .crosssell-opportunity-widget {
+        grid-column: span 1;
+    }
+    
+    .matrix-grid {
+        height: auto;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .funnel-stages {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .funnel-stage {
+        min-height: auto;
+    }
+    
+    .conversion-ratios {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .matrix-header,
+    .tier-row {
+        grid-template-columns: 80px repeat(4, 1fr);
+        font-size: 0.75rem;
+    }
+    
+    .channel-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .matrix-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    
+    .risk-summary {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

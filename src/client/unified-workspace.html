@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLV Maximizer Workspace</title>
+    <sdk:now-ux-globals></sdk:now-ux-globals>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .workspace-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            background: #ffffff;
+            border-right: 1px solid #e0e0e0;
+            box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #f8f9fa;
+        }
+
+        .sidebar-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            margin: 0.25rem 0;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: #f8f9fa;
+            color: #3498db;
+            border-left-color: #3498db;
+        }
+
+        .nav-link.active {
+            background: #e3f2fd;
+            color: #3498db;
+            border-left-color: #3498db;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        .workspace-header {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .workspace-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .workspace-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 400;
+        }
+
+        .dashboard-section {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-description {
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .dashboard-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dashboard-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="workspace-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">CLV Workspace</div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#dashboard" class="nav-link active">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#customers" class="nav-link">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#reports" class="nav-link">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#settings" class="nav-link">Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="workspace-header">
+                <h1 class="workspace-title">CLV Maximizer Workspace</h1>
+                <p class="workspace-subtitle">Customer Lifetime Value Analytics Platform</p>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section class="dashboard-section">
+                <h2 class="section-title">CLV Dashboard</h2>
+                <p class="dashboard-description">
+                    Access comprehensive customer lifetime value analytics, tier segmentation, 
+                    cross-sell opportunities, and performance metrics. Monitor renewal conversion 
+                    rates, churn analysis, and strategic business insights.
+                </p>
+                
+                <a href="/x_hete_clv_maximiz_dashboard.do" class="dashboard-button">
+                    Open CLV Dashboard
+                </a>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-title">Customer Analytics</div>
+                        <div class="feature-description">
+                            Track customer lifetime value, tier distribution, and engagement metrics 
+                            across Platinum, Gold, Silver, and Bronze segments.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">Performance KPIs</div>
+                        <div class="feature-description">
+                            Monitor renewal conversion rates, churn analysis, campaign ROI, 
+                            and projected revenue forecasting.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">Cross-Sell Opportunities</div>
+                        <div class="feature-description">
+                            Identify upsell potential, product recommendations, and coverage 
+                            gaps for strategic revenue growth.
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-title">Market Intelligence</div>
+                        <div class="feature-description">
+                            Competitor benchmarking, industry comparisons, and strategic 
+                            positioning analysis for informed decision making.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simple navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Update content based on selection (placeholder)
+                    console.log('Navigation clicked:', this.textContent);
+                });
+            });
+            
+            // Dashboard button click handler
+            const dashboardButton = document.querySelector('.dashboard-button');
+            if (dashboardButton) {
+                dashboardButton.addEventListener('click', function() {
+                    // Add loading state
+                    this.innerHTML = '<span class="loading"></span>Opening Dashboard...';
+                    
+                    // Navigate after brief delay for visual feedback
+                    setTimeout(() => {
+                        window.location.href = '/x_hete_clv_maximiz_dashboard.do';
+                    }, 500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
